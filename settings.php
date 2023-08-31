@@ -13,8 +13,9 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
 /**
- * Language File.
+ * This file defines the admin settings for this plugin
  *
  * @package   bbbext_flexurl
  * @copyright 2023 onwards, Blindside Networks Inc
@@ -22,8 +23,12 @@
  * @author    Laurent David (laurent@call-learning.fr)
  */
 
-defined('MOODLE_INTERNAL') || die();
-$string['additionalparams'] = 'Additional param';
-$string['additionalparams:error'] = 'Additional param cannot contain HTML tags';
-$string['pluginname'] = 'BigBlueButton FlexURL';
-$string['analytics_callback_url'] = 'Analytics Callback URL';
+defined('MOODLE_INTERNAL') || die;
+
+$settings->add(new admin_setting_configtext(
+        'bbbext_flexurl/analytics_callback_url',
+        new lang_string('analytics_callback_url', 'bbbext_flexurl'),
+        new lang_string('analytics_callback_url', 'bbbext_flexurl'),
+        '',
+        PARAM_URL)
+);
